@@ -1,12 +1,5 @@
 public class User
 {
-  var firstName;
-  var lastName;
-  var userName;
-  var password;
-  var email;
-  var phone;
-
   constructor(firstName, lastName, userName, password, email, phone)
   {
     this.firstName = firstName;
@@ -15,31 +8,17 @@ public class User
     this.password = password;
     this.email = email;
     this.phone = phone;
-
-    validateUserData();
-    encryptUserData();
   }
-
-  validateUserData() {}
-
-  encryptUserData()
+  
+  deleteUser()
   {
-    // Decide on encryption algorithm.
+    // Delete jSON file. Look up how to delete a jSON file from here.
   }
 
-  deleteUser() {}
-
-  login() {}
-
-  logout() {}
-
-  description()
-  {
-    // Decide on purpose of this function.
-  }
-
-  toString()
-  {
-    // Decide on relevant information.
-  }
+  //   validateUserData() {}  
+  //   encryptUserData() {}
+  
+  // Look up as part of the UI.
+  //   login() {}
+  //   logout() {}
 }
