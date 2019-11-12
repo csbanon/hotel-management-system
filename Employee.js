@@ -1,15 +1,8 @@
-class Employee //extends User
+class Employee extends User
 {
-    constructor()
+    constructor(firstName, lastName, userName, password, email, phone, empID)
     {
-       super(firstName, lastName, userName, password, email, phone)
-       {
-           this.name = {this.firstName = firstName, this.lastName = lastName};
-           this.userName = userName;
-           this.password = password;
-           this.email = email;
-           this.phone = phone;
-       }
+       super(firstName, lastName, userName, password, email, phone);
+       this.empID = empID;
     }
-
 }
