@@ -2,8 +2,7 @@ public class User
 {
   constructor(firstName, lastName, userName, password, email, phone)
   {
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.name = { this.firstName = firstName, this.lastName = lastName };
     this.userName = userName;
     this.password = password;
     this.email = email;
