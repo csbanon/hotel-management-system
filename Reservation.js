@@ -1,6 +1,5 @@
 class Reservation 
 {
-
     constructor(confirmationNum, client, room, dateCreated, checkIn, checkOut, receipt, AddOn)
     {
         this.confirmationNum = confirmationNum;
@@ -11,22 +10,5 @@ class Reservation
         this.checkOut = checkOut;
         this.receipt = new Receipt();
         this.addOns = new Set([AddOn]);
-    }
-
-    validateConfirmationNum() //returns boolean
-    {
-        //TODO
-    }
-
-    description() //void
-    {
-        //TODO
-    }
-
-    toString() // returns String
-    {
-        //TODO
-    }
-
-  
+    }  
 }
