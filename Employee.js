@@ -1,23 +1,15 @@
-class Employee
+class Employee //extends User
 {
-    constructor(firstName, lastName, userName, password, email, phone)
-   {
-       this.firstName = firstName;
-       this.lastName = lastName;
-       this.userName = userName;
-       this.password = password;
-       this.email = email;
-       this.phone = phone;
-   }
-
-   description() //void
-   {
-        //TODO
-   }
-
-   toString() //returns String
-   {
-        //TODO
-   }
+    constructor()
+    {
+       super(firstName, lastName, userName, password, email, phone)
+       {
+           this.name = {this.firstName = firstName, this.lastName = lastName};
+           this.userName = userName;
+           this.password = password;
+           this.email = email;
+           this.phone = phone;
+       }
+    }
 
 }
