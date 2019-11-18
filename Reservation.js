@@ -4,7 +4,7 @@ class Reservation
     {
         this.confirmationNum = confirmationNum;
         this.client = client;
-        this.room = new Room();
+        this.room = room;
         this.dateCreated = dateCreated;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
