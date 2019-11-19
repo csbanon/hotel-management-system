@@ -1,13 +1,13 @@
 class Service 
 {
-    constructor (serviceID, type, room, date, employee, isComplete, comments)
+    constructor(serviceID, type, room, date, comments)
     {
         this.serviceID = serviceID;
         this.type = type;
         this.room = room;
         this.date = date;
-        this.employee = employee;
-        this.isComplete = isComplete;
+        this.assignRandomEmployee();
+        this.isComplete = false;
         this.comments = comments;
     }
 
@@ -15,7 +15,7 @@ class Service
     //          cancelling a service that does exist
     //          cancelling services at different positions in the service queue
     // marks service complete and removes it from the employee's queue
-    cancelService ()
+    cancelService()
     {
         this.comments = this.comments.concat("Cancelled. ");
 
@@ -38,40 +38,13 @@ class Service
 
     // tests: assigning an employee that doesn't exist
     //assigns a specific employee to this service
-    assignEmployee (employee)
+    assignEmployee(employee)
     {
         // there needs to be a check to see if the employee exists before assignment
+        // since at creation of the service, an employee is automatically assigned, 
+        //      the service needs to be removed from the original employee's queue
         this.employee = employee;
         this.employee.assignService(this);
         return true;
-    }
-
-    static description ()
-    {
-        // This class tracks details concerning a service order, such as:
-        // The service ID, service type, date generated, room requesting,
-        // employee assigned for fulfillment, status, and comments.
-        // This class supports cancellation and changes to assigned employee.
-    }
-
-    // returns in the format
-    // ID: ***, Type: ***, Date: ***, Room: ***, Employee: ***, Status: ***
-    // Comments: ***
-    toString ()
-    {
-        var s = "ID: ";
-        s = s.concat(this.serviceID.toString());
-        s = s.concat(", Type: ");
-        s = s.concat(this.type);
-        s = s.concat(", Date: ");
-        s = s.concat(this.date.toString());
-        s = s.concat(", Room: ");
-        s = s.concat(this.room.roomNum.toString());
-        s = s.concat(", Employee: ");
-        s = s.concat(this.employee.toString());
-        s = s.concat(", Status: ");
-        s = s.concat(this.isComplete.toString());
-        s = s.concat("\nComments: ");
-        return s.concat(this.comments);
     }
 }
