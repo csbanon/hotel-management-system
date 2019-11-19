@@ -2,13 +2,7 @@ class Client extends User
 {
    constructor(firstName, lastName, userName, password, email, phone, reservation, card, isCheckedIn)
    {
-      // To-Do: Fix constructor.
-       this.firstName = firstName;
-       this.lastName = lastName;
-       this.userName = userName;
-       this.password = password;
-       this.email = email;
-       this.phone = phone;
+       super(firstName, lastName, userName, password, email, phone);
        this.reservation = new Reservation ();
        this.card = new Card();
        this.isCheckedIn = false;
