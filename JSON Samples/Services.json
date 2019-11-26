@@ -1,0 +1,31 @@
+{
+    "activeOrders": [
+        {
+            "serviceID":"1",
+            "type":"cleaning",
+            "date":"11/26/2019",
+            "room":"7",
+            "comments":"dog vomit on carpet"
+        },
+
+        {
+            "serviceID":"2",
+            "type":"cleaning",
+            "date":"11/26/2019",
+            "room":"8",
+            "comments":"new towels requested"
+        },
+
+        {
+            "serviceID":"3",
+            "type":"cleaning",
+            "date":"11/26/2019",
+            "room":"4",
+            "comments":""
+        }
+    ],
+
+    "completedOrders": [
+
+    ]
+}

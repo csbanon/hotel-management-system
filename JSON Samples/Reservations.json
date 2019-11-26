@@ -1,0 +1,12 @@
+{
+    "reservations": [
+        {
+            "confirmationNumber":"125348",
+            "client":"Philip Fry",
+            "room":"7",
+            "dateCreated":"12/31/1999",
+            "checkIn":"01/01/3000",
+            "checkOut":"01/05/3000"
+        }
+    ]
+}

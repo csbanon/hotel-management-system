@@ -1,0 +1,15 @@
+{
+    "clients": [
+        {
+            "firstname":"philip",
+            "lastname":"fry",
+            "userName":"slurm",
+            "password":"itshighlyaddictive",
+            "email":"deliveries@planetexpress.com",
+            "phone":"18005241425",
+            "card":"1234567890123456",
+            "isCheckedIn":"false"
+        }
+
+    ]
+}

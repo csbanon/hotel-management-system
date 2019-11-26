@@ -1,0 +1,10 @@
+{
+    "rooms": [
+        {
+            "roomNum":"1",
+            "guestName":"Philip Fry",
+            "isClean":"true",
+            "isVacant":"false"
+        }
+    ]
+}
