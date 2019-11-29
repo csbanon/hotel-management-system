@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script data-require="ui-bootstrap@0.12.1" data-semver="0.12.1" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    
+<!-- Kenneth's navbar code -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content"IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Olé Hotel Management System <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Book A Room</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Employee/Admin Login</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown10">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+</head>
+<!--End navbar code--> 
+
+
+<body>
+  <h3>Reservation Information</h3>
+
+  <!--TO-DO: script to get guest's reservation info from json-->
+  <script type="text/javascript">
+    const fs = require('fs');
+    var json;
+    fs.readFile('Reservations.json', (err, data) => {
+        if (err) throw err;
+        json = JSON.parse(data);
+    });
+  </script>
+ <!--Can't get output information to html so far-->
+
+ <!--TO-DO: Add functionality for check out button-->
+  <div ng-controller="CheckOut">
+      <button type="button" class="btn btn-primary" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+         Check Out
+      </button>
+  </div>
+
+  <!--TO-DO: Add functionality for add-on buttons-->
+  <div ng-controller="AddonsCtrl">
+      <h4>Add-On Purchases</h4>
+      <div class="btn-group">
+          <label class="btn btn-primary" ng-model="checkModel.left" uib-btn-checkbox>Wi-Fi</label>
+          <label class="btn btn-primary" ng-model="checkModel.middle" uib-btn-checkbox>Pool Access</label>
+          <label class="btn btn-primary" ng-model="checkModel.right" uib-btn-checkbox>Parking</label>
+          <label class="btn btn-primary" ng-model="checkModel.right" uib-btn-checkbox>Cable TV</label>
+          <label class="btn btn-primary" ng-model="checkModel.right" uib-btn-checkbox>Room Service</label>
+      </div>
+  </div>
+  
+</body>
+
+</html>
