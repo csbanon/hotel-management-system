@@ -1,85 +1,100 @@
-
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script data-require="ui-bootstrap@0.12.1" data-semver="0.12.1" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
-    
-<!-- Kenneth's navbar code -->
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content"IE=edge">
-    <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-   <!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <style>
+      h1{
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+        width: 50%;
+      }
+      table.center {
+        margin-left:auto; 
+        margin-right:auto;
+      }    
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      h3{
+        text-align: center;
+      }
+      div {
+        display: inline-block;
+      }
+      .btn-group button {
+        background-color: rgb(35, 34, 109); 
+        border: 1px solid white; 
+        color: white; /* White text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        float: left; /* Float the buttons side by side */
+      }
 
+      /* Clear floats (clearfix hack) */
+      .btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+      }
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      .btn-group button:not(:last-child) {
+        border-right: none; /* Prevent double borders */
+      }
+
+      /* Add a background color on hover */
+      .btn-group button:hover {
+        background-color: #3e8e41;
+      }
+
       
-          <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Olé Hotel Management System <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Book A Room</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Employee/Admin Login</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown10">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-</head>
-<!--End navbar code--> 
 
+    </style>
+  </head>
+  <body>
+    <h1>Your Reservation Information</h1>
+    <table class="center">
+        <tr>
+        <th>Name:</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>Confirmation Number:</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>Check-In Date:</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>Check-Out Date:</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>Room Number:</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>Duration of Stay:</th>
+        <th></th>
+        </tr>
+      </table>
 
-<body>
-  <h3>Reservation Information</h3>
+    <h3>Purchase Add-Ons</h3>
 
-  <!--TO-DO: script to get guest's reservation info from json-->
-  <script type="text/javascript">
-    const fs = require('fs');
-    var json;
-    fs.readFile('Reservations.json', (err, data) => {
-        if (err) throw err;
-        json = JSON.parse(data);
-    });
-  </script>
- <!--Can't get output information to html so far-->
-
- <!--TO-DO: Add functionality for check out button-->
-  <div ng-controller="CheckOut">
-      <button type="button" class="btn btn-primary" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
-         Check Out
-      </button>
-  </div>
-
-  <!--TO-DO: Add functionality for add-on buttons-->
-  <div ng-controller="AddonsCtrl">
-      <h4>Add-On Purchases</h4>
-      <div class="btn-group">
-          <label class="btn btn-primary" ng-model="checkModel.left" uib-btn-checkbox>Wi-Fi</label>
-          <label class="btn btn-primary" ng-model="checkModel.middle" uib-btn-checkbox>Pool Access</label>
-          <label class="btn btn-primary" ng-model="checkModel.right" uib-btn-checkbox>Parking</label>
-          <label class="btn btn-primary" ng-model="checkModel.right" uib-btn-checkbox>Cable TV</label>
-          <label class="btn btn-primary" ng-model="checkModel.right" uib-btn-checkbox>Room Service</label>
+    <div class="btn-group" style="width:100%">
+        <button style="width:25%">Room Service</button>
+        <button style="width:25%">Wi-Fi</button>
+        <button style="width:25%">Cable TV</button>
+        <button style="width:25%">Pool Access</button>
+        <button style="width:25%">Paid Parking</button>
       </div>
-  </div>
-  
-</body>
 
+  </body>
 </html>
