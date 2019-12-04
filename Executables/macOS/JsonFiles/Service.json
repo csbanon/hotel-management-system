@@ -1,0 +1,47 @@
+[
+  {
+    "ServiceId": "1",
+    "Comments": "Service Created By System or by some other employee",
+    "DateCreate": "12/01/2019 01:19:57",
+    "EmployeeId": "1",
+    "IsCompleted": "True",
+    "RoomId": "2",
+    "ServiceType": "Cleaning"
+  },
+  {
+    "ServiceId": "2",
+    "Comments": "Service Created By System",
+    "DateCreate": "12/01/2019 01:26:53",
+    "EmployeeId": "1",
+    "IsCompleted": "False",
+    "RoomId": "6",
+    "ServiceType": "Cleaning"
+  },
+  {
+    "ServiceId": "3",
+    "Comments": "Service Created By System",
+    "DateCreate": "12/01/2019 01:36:46",
+    "EmployeeId": "2",
+    "IsCompleted": "False",
+    "RoomId": "10",
+    "ServiceType": "Cleaning"
+  },
+  {
+    "ServiceId": "4",
+    "Comments": "Service Created By System",
+    "DateCreate": "12/01/2019 01:45:31",
+    "EmployeeId": "1",
+    "IsCompleted": "False",
+    "RoomId": "2",
+    "ServiceType": "Cleaning"
+  },
+  {
+    "ServiceId": "5",
+    "Comments": "Service Created By System",
+    "DateCreate": "12/01/2019 04:30:51",
+    "EmployeeId": "3",
+    "IsCompleted": "False",
+    "RoomId": "6",
+    "ServiceType": "Cleaning"
+  }
+]
