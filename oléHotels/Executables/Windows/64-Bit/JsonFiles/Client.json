@@ -1,0 +1,23 @@
+[{
+        "ClientId": "1",
+        "CardId": "1",
+        "Email": "eddie@vanhalen.com",
+        "FirstName": "Jane",
+        "IsCheckedIn": "True",
+        "LastName": "Apple",
+        "Password": "116101115116",
+        "Phone": "3453453453",
+        "Username": "japple"
+    },
+    {
+        "ClientId": "2",
+        "CardId": "3",
+        "Email": "sl@dd.com",
+        "FirstName": "Tim",
+        "IsCheckedIn": "False",
+        "LastName": "Apple",
+        "Password": "116101115116",
+        "Phone": "2342342342",
+        "Username": "tapple"
+    }
+]

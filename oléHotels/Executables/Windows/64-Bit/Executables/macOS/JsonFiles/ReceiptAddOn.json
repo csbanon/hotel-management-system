@@ -1,0 +1,32 @@
+[
+  {
+    "ReceiptAddOnId": "1",
+    "AddOnId": "1",
+    "ReceiptId": "1",
+    "ReservationId": "0"
+  },
+  {
+    "ReceiptAddOnId": "2",
+    "AddOnId": "5",
+    "ReceiptId": "2",
+    "ReservationId": "0"
+  },
+  {
+    "ReceiptAddOnId": "3",
+    "AddOnId": "1",
+    "ReceiptId": "3",
+    "ReservationId": "0"
+  },
+  {
+    "ReceiptAddOnId": "4",
+    "AddOnId": "3",
+    "ReceiptId": "3",
+    "ReservationId": "0"
+  },
+  {
+    "ReceiptAddOnId": "5",
+    "AddOnId": "4",
+    "ReceiptId": "3",
+    "ReservationId": "0"
+  }
+]

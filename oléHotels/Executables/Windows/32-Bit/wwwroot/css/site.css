@@ -1,0 +1,42 @@
+﻿.footer-text {
+    color: white;
+    text-align: center;
+}
+
+.page-logo {
+    border: 0px;
+    background-color: #EEF0F0;
+}
+
+.left-column {
+    background-color: #EEF0F0;
+}
+
+.site-bg-color {
+    background-color: #212121;
+}
+
+a.site-menu:link {
+    color: #212121;
+}
+
+a.site-menu:visited {
+    color: #212121;
+}
+
+a.site-menu:hover {
+    color: #212121;
+    background-color: #D7D9D9;
+}
+
+a#logout:link {
+    color: white;
+}
+
+a#logout:visited {
+    color: white;
+}
+
+a#logout:hover {
+    color: #D7D9D9;
+}

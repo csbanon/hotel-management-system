@@ -1,0 +1,35 @@
+[
+  {
+    "EmployeeId": "1",
+    "Email": "n.tenant@psb.com",
+    "EmployeeType": "Admin",
+    "FirstName": "John",
+    "LastName": "Appleseed",
+    "Password": "test123",
+    "Phone": "7872345848",
+    "PhotoUrl": "../images/Employee06.jpg",
+    "Username": "jappleseed"
+  },
+  {
+    "EmployeeId": "2",
+    "Email": "vclarke@erasure.com",
+    "EmployeeType": "FOH",
+    "FirstName": "Kyle",
+    "LastName": "Bryan",
+    "Password": "test123",
+    "Phone": "234242523532",
+    "PhotoUrl": "../images/Employee04.jpg",
+    "Username": "kbryan"
+  },
+  {
+    "EmployeeId": "3",
+    "Email": "d.gahan@dm.com",
+    "EmployeeType": "BOH",
+    "FirstName": "Joseph",
+    "LastName": "Matthews",
+    "Password": "test123",
+    "Phone": "754574545",
+    "PhotoUrl": "../images/Employee03.jpg",
+    "Username": "jmatthews"
+  }
+]

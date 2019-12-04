@@ -1,0 +1,32 @@
+[
+  {
+    "ReservationId": "1",
+    "ClientId": "1",
+    "ConfirmationNumber": "9700443268",
+    "DateCheckIn": "11/22/2019 00:00:00",
+    "DateCheckOut": "11/25/2019 00:00:00",
+    "DateCreated": "01/01/0001 00:00:00",
+    "ReceiptId": "1",
+    "RoomId": "10"
+  },
+  {
+    "ReservationId": "2",
+    "ClientId": "2",
+    "ConfirmationNumber": "3566650502",
+    "DateCheckIn": "12/02/2019 00:00:00",
+    "DateCheckOut": "12/03/2019 00:00:00",
+    "DateCreated": "12/01/2019 04:04:50",
+    "ReceiptId": "2",
+    "RoomId": "10"
+  },
+  {
+    "ReservationId": "3",
+    "ClientId": "2",
+    "ConfirmationNumber": "628247885",
+    "DateCheckIn": "12/03/2019 00:00:00",
+    "DateCheckOut": "12/06/2019 00:00:00",
+    "DateCreated": "12/01/2019 04:16:35",
+    "ReceiptId": "3",
+    "RoomId": "0"
+  }
+]

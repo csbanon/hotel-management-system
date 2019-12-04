@@ -1,0 +1,62 @@
+[
+  {
+    "RoomId": "1",
+    "IsClean": "False",
+    "IsVacant": "True",
+    "RoomNumber": "101"
+  },
+  {
+    "RoomId": "2",
+    "IsClean": "False",
+    "IsVacant": "True",
+    "RoomNumber": "102"
+  },
+  {
+    "RoomId": "3",
+    "IsClean": "False",
+    "IsVacant": "True",
+    "RoomNumber": "103"
+  },
+  {
+    "RoomId": "4",
+    "IsClean": "False",
+    "IsVacant": "False",
+    "RoomNumber": "104"
+  },
+  {
+    "RoomId": "5",
+    "IsClean": "False",
+    "IsVacant": "True",
+    "RoomNumber": "105"
+  },
+  {
+    "RoomId": "6",
+    "IsClean": "False",
+    "IsVacant": "True",
+    "RoomNumber": "106"
+  },
+  {
+    "RoomId": "7",
+    "IsClean": "True",
+    "IsVacant": "False",
+    "RoomNumber": "107"
+  },
+  {
+    "RoomId": "8",
+    "IsClean": "False",
+    "IsVacant": "False",
+    "RoomNumber": "108"
+  },
+  {
+    "RoomId": "9",
+    "IsClean": "True",
+    "IsVacant": "False",
+    "RoomNumber": "109"
+  },
+  {
+    "RoomId": "10",
+    "IsClean": "True",
+    "IsVacant": "False",
+    "RoomNumber": "110"
+  }
+]

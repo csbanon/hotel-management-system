@@ -1,0 +1,32 @@
+[
+  {
+    "AddOnId": "1",
+    "Description": "Connection to the Internet",
+    "Name": "Wi-fi",
+    "Price": "2"
+  },
+  {
+    "AddOnId": "2",
+    "Description": "Use our small Kiddy pool",
+    "Name": "Pool Access",
+    "Price": "0"
+  },
+  {
+    "AddOnId": "3",
+    "Description": "Park at your own risk",
+    "Name": "Parking",
+    "Price": "15"
+  },
+  {
+    "AddOnId": "4",
+    "Description": "Try to find something interesting",
+    "Name": "Cable TV",
+    "Price": "0"
+  },
+  {
+    "AddOnId": "5",
+    "Description": "Our food in your door",
+    "Name": "Room Service",
+    "Price": "3"
+  }
+]

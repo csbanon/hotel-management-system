@@ -1,0 +1,26 @@
+[
+  {
+    "CardId": "1",
+    "CardNumber": "2342342342342342",
+    "ExpirationMonth": "5",
+    "ExpirationYear": "2025",
+    "NameOnCard": "test",
+    "SecurityCode": "234"
+  },
+  {
+    "CardId": "2",
+    "CardNumber": "2342234342342342",
+    "ExpirationMonth": "6",
+    "ExpirationYear": "2024",
+    "NameOnCard": "SL",
+    "SecurityCode": "234"
+  },
+  {
+    "CardId": "3",
+    "CardNumber": "1234567891011121",
+    "ExpirationMonth": "4",
+    "ExpirationYear": "2024",
+    "NameOnCard": "Tim Apple",
+    "SecurityCode": "123"
+  }
+]
