@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page Title -->
+    <title>ol&eacute;Hotels | @ViewData["Title"]</title>
+
+    <!-- Bootstrap Default Character Set and Viewport Settings -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootsrap CSS Stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    
+    <!-- jQueryUI Stylesheet -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" crossorigin="anonymous">
+    
+    <!-- Custom Site CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
+</head>
+<body>
+<!-- Page Header: Navbar -->
+    <header>
+        <nav class="navbar navbar-dark site-bg-color">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="/images/logo-navbar.png" width="200" height="30" class="d-inline-block align-top" alt="logo">
+            </a>
+            <a id="logout" class="nav-item nav-link text-uppercase font-weight-bold text-decoration-none" asp-controller="Reservation" asp-action="BookReservation">Book a Room</a>
+            <a id="logout" class="nav-item nav-link text-uppercase font-weight-bold text-decoration-none" asp-controller="Reservation" asp-action="MyReservations">My Reservations</a>
+            <a id="logout" class="nav-item nav-link text-uppercase font-weight-bold text-decoration-none" asp-controller="Client" asp-action="Login">Log In</a>
+        </nav>
+    </header>
+
+    <!-- Main Page Section -->
+    <div class="container-fluid">
+        <div class="row">
+             <div class="col-12">   
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Footer: Copyright Navbar -->
+    <footer class="site-bg-color fixed-bottom">
+        <nav class="navbar navbar-dark site-bg-color">
+            <a class="navbar-brand"></a>
+            <div class="footer-text">&copy ol&eacute;Hotels 2019. All rights reserved.</div>
+            <a id="logout" class="nav-item nav-link text-uppercase font-weight-bold text-decoration-none" asp-controller="Home" asp-action="Login">Employee Log In</a>
+        </nav>
+    </footer>
+
+    <!-- Used JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script> 
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

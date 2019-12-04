@@ -1,0 +1,80 @@
+@model CheckOutResultViewModel
+@{
+    ViewData["Title"] = "Check Out";
+}
+<!-- Header Image -->
+<div class="row">
+    <div class="col">
+        <div class="jumbotron jumbotron-fluid"
+            style="background-image: url('/images/rooms-header-image.png'); background-size: cover; height: 200px;">
+            <div class="container">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div @if(Model.IsCheckOut && Model.IsRoomUnassigned){<text>class="alert alert-success"</text>}else{<text>class="alert alert-danger"</text>} role="alert">
+            @Model.Message
+        </div>
+    </div>
+</div>
+@if(Model.IsCheckOut && Model.IsRoomUnassigned)
+{
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <h4 class="mb-3 text-uppercase">Receipt</h4>
+                    <h6>(Each room has a $50 flat fee per night)</h6>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Check-In Date: @Model.CheckInDate.ToShortDateString()</h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Check-out Date: @Model.CheckOutDate.ToShortDateString()</h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Room: @Model.RoomTotal.ToString("C")</h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Add Ons: @Model.AddOnTotal.ToString("C")</h6>
+                            </div>
+                        </li>                        
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Sub Total: @Model.SubTotal.ToString("C")</h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Tax: @Model.Tax.ToString("C")</h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h4 class="my-0">Grand Total: @Model.GrandTotal.ToString("C")</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+
+

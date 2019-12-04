@@ -1,0 +1,40 @@
+@model IEnumerable<Room>
+
+
+<!-- Header Image -->
+<div class="row">
+    <div class="col">
+        <div class="jumbotron jumbotron-fluid"
+            style="background-image: url('/images/rooms-header-image.png'); background-size: cover; height: 200px;">
+            <div class="container">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="row">
+    <div class="col">
+        <div class="row row-cols-1 row-cols-md-5">
+            @foreach (var room in Model)
+            {
+                <div class="col mb-4">
+                    <div class="card">
+                        <img class="card-img-top" alt="..." @if(room.IsVacant){<text>src="/images/rooms-card.jpg"</text>}else{<text>src="/images/rooms-card-red.jpg"</text>}/>
+                        <div class="card-body">
+                            <h5 class="card-title">Room #@room.RoomNumber</h5>
+                            @if(room.IsVacant){<a class="btn btn-primary" asp-controller="Admin" asp-action="AssignReservation" asp-route-id="@room.RoomId">Assign to Customer</a>}
+                            else{<p>&nbsp;</p>}
+                        </div>
+                    </div>
+                </div> 
+            }
+        </div>
+    </div>
+</div>
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
+    </div>

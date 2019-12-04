@@ -1,0 +1,16 @@
+@model Reservation
+@{
+    ViewData["Title"] = "Post Booking";
+}
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="jumbotron">
+            <h1 class="display-4">Congratulations!</h1>
+            <p class="lead">Your Reservation has been successfully processed!</p>
+            <hr class="my-4">
+            <p>Your Confirmation Number is @Model.ConfirmationNumber</p>
+            <a class="btn btn-primary btn-lg" asp-controller="Reservation" asp-action="MyReservations" role="button">See Reservations</a>
+        </div>      
+    </div>
+</div>
+

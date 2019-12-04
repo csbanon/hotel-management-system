@@ -1,0 +1,32 @@
+@model IEnumerable<Employee>
+
+
+<!-- Header Image -->
+<div class="row">
+    <div class="col">
+        <div class="jumbotron jumbotron-fluid"
+            style="background-image: url('/images/rooms-header-image.png'); background-size: cover; height: 200px;">
+            <div class="container">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="row">
+    <div class="col">
+        <div class="row row-cols-1 row-cols-md-5">
+            @foreach (var employee in Model)
+            {
+                <div class="col mb-4">
+                    <div class="card">
+                        <img class="card-img-top" alt="..." src="@employee.PhotoUrl"/>
+                        <div class="card-body">
+                            <h5 class="card-title">@employee.FullName</h5>
+                        </div>
+                    </div>
+                </div> 
+            }
+        </div>
+    </div>
+</div>

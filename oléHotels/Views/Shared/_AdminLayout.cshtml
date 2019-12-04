@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page Title -->
+    <title>ol&eacute;Hotels | @ViewData["Title"]</title>
+
+    <!-- Bootstrap Default Character Set and Viewport Settings -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootsrap CSS Stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!-- jQueryUI Stylesheet -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" crossorigin="anonymous">
+    
+    <!-- Custom Site CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
+</head>
+<body>
+<!-- Page Header: Navbar -->
+    <header>
+        <nav class="navbar navbar-dark site-bg-color">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="/images/logo-navbar.png" width="200" height="30" class="d-inline-block align-top" alt="logo">
+            </a>
+            <a id="logout" class="text-uppercase font-weight-bold text-decoration-none" asp-controller="Home" asp-action="Logout">Log Out</a>
+        </nav>
+    </header>
+
+    <!-- Main Page Section -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Left Menu Bar -->
+            <div class="col-2 left-column">
+
+                <!-- Menu Bar Logo -->
+                <div class="row">
+                    <div class="col">
+                        <img src="/images/logo-left-menu.png" alt="oleHotels Logo" class="img-thumbnail page-logo">
+                    </div>
+                </div>
+
+                <!-- Menu Bar Nav -->
+                <div class="row">
+                    <div class="col">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase font-weight-bold site-menu" asp-controller="Admin" asp-action="Index">Employee Home</a>
+                            </li>
+                            @if(ViewData["EmployeeType"].ToString() == "Admin" || ViewData["EmployeeType"].ToString() == "FOH" )
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase font-weight-bold site-menu" asp-controller="Admin" asp-action="CheckIn">Check In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase font-weight-bold site-menu" asp-controller="Admin" asp-action="CheckOut">Check Out</a>
+                                </li>
+                            }
+                            @if(ViewData["EmployeeType"].ToString() == "Admin")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase font-weight-bold active site-menu"
+                                        asp-controller="Admin" asp-action="Rooms">Rooms</a>
+                                </li>
+                            }
+                            @if(ViewData["EmployeeType"].ToString() == "Admin" || ViewData["EmployeeType"].ToString() == "BOH" )
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase font-weight-bold site-menu" asp-controller="Admin" asp-action="ServiceOrders">Service Orders</a>
+                                </li>
+                            }
+                            @if(ViewData["EmployeeType"].ToString() == "Admin")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase font-weight-bold site-menu" asp-controller="Admin" asp-action="Employees">Employees</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area: Header Image + Page Content -->
+            <!-- This area changes between pages. Everything else remains static. -->
+            <div class="col-10">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Footer: Copyright Navbar -->
+    <footer class="site-bg-color fixed-bottom">
+        <nav class="navbar navbar-dark site-bg-color">
+            <a class="navbar-brand"></a>
+            <div class="footer-text">&copy ol&eacute;Hotels 2019. All rights reserved.</div>
+            <a id="logout" class="nav-item nav-link text-uppercase font-weight-bold text-decoration-none" asp-controller="Home" asp-action="Login">Employee Log In</a>
+        </nav>
+    </footer>
+
+    <!-- Used JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script> 
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

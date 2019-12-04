@@ -1,0 +1,304 @@
+@model ReservationViewModel
+@{
+    ViewData["Title"] = "Book Reservation";
+}
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form asp-controller="Reservation" asp-action="BookReservation" method="post">
+            <p>&nbsp;</p>
+            <h2 class="mb-3 text-uppercase">Book your Reservation</h2>
+            <hr class="ng-mb-4">
+            <h4 class="mb-3 text-uppercase">Date Information</h4>
+            <!-- /.row & start date -->
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="Reservation.DateCheckIn" class="control-label"></label><span class="text-danger"> *</span>
+                        <div class="input-group">
+                            <input asp-for="Reservation.DateCheckIn" class="form-control datepicker" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary" id="calDateCheckIn">
+                                    <img src="/icons/calendar.svg" title="Calendar" />
+                                </button>
+                            </div>
+                        </div>
+                        <span asp-validation-for="Reservation.DateCheckIn" class="text-danger"></span>
+                    </div>
+                </div>
+                <!-- end date -->
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="Reservation.DateCheckOut"></label><span class="text-danger"> *</span>
+                        <div class="input-group">
+                            <input asp-for="Reservation.DateCheckOut" class="form-control datepicker" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary" id="calDateCheckOut">
+                                    <img src="/icons/calendar.svg" title="Calendar" />
+                                </button>
+                            </div>
+                        </div>
+                        <span asp-validation-for="Reservation.DateCheckOut" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row & start date -->
+            <hr class="ng-mb-4">
+            <h4 class="mb-3 text-uppercase">Personal Information</h4>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="Client.FirstName"></label><span class="text-danger"> *</span>
+                        <input asp-for="Client.FirstName" class="form-control" />
+                        <span asp-validation-for="Client.FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="Client.LastName"></label><span class="text-danger"> *</span>
+                        <input asp-for="Client.LastName" class="form-control" />
+                        <span asp-validation-for="Client.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!--EMAIL INPUT VARIABLE-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label asp-for="Client.Email"></label>
+                        <input asp-for="Client.Email" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!---PHONE INPUT VARIABLE-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label asp-for="Client.Phone"></label>
+                        <input asp-for="Client.Phone" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <hr class="ng-mb-4">
+            <h4 class="mb-3 text-uppercase">Payment</h4>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="Card.NameOnCard"></label><span class="text-danger"> *</span>
+                        <input asp-for="Card.NameOnCard" class="form-control">
+                        <span asp-validation-for="Card.NameOnCard" class="text-danger"></span>
+                    </div>
+                </div>
+                <!---CARDNUM INPUT VARIABLE-->
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="Card.CardNumber"></label><span class="text-danger"> *</span>
+                        <input asp-for="Card.CardNumber"type="text" class="form-control">
+                        <span asp-validation-for="Card.CardNumber" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="Card.SecurityCode"></label><span class="text-danger"> *</span>
+                        <input asp-for="Card.SecurityCode"class="form-control">
+                        <span asp-validation-for="Card.SecurityCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label asp-for="Card.ExpirationMonth"></label><span class="text-danger"> *</span>
+                        <select asp-for="Card.ExpirationMonth" class="form-control" asp-items="Model.ExpirationMonths"></select>
+                        <span asp-validation-for="Card.ExpirationMonth" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label asp-for="Card.ExpirationYear"></label><span class="text-danger"> *</span>
+                        <select asp-for="Card.ExpirationYear" class="form-control" asp-items="Model.ExpirationYears"></select>
+                        <span asp-validation-for="Card.ExpirationYear" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!---ADD ONS-->
+            <hr class="ng-mb-4">
+            <div class="row">
+                <div class="col-6">
+                    <h4 class="mb-3 text-uppercase">Add Ons</h4>
+                    <h6>Select Add On items</h6>
+                    @foreach(var addOn in Model.AddOns)
+                    {
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input addOns" id="addOn_@addOn.AddOnId" name="addOn_@addOn.AddOnId" data-price="@addOn.Price" @if(@addOn.IsSelected){<text> checked</text>}>
+                            <label class="custom-control-label" for="addOn_@addOn.AddOnId">@addOn.Name</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!---RESERVATION QUOTE-->
+            <hr class="ng-mb-4">        
+            <div class="row">
+                <div class="col-6">
+                    <h4 class="mb-3 text-uppercase">Your Reservation Quote</h4>
+                    <h6>(Each room has a $50 flat fee per night)</h6>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Check-In Date: <span id="quoteCheckInDate"></span></h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Check-out Date: <span id="quoteCheckOutDate"></span> </h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Add Ons: $<span id="quoteAddOns"></span></h6>
+                            </div>
+                        </li>                        
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Sub Total: $<span id="quoteSubTotal"></span></h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Tax: $<span id="quoteTax"></span></h6>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h4 class="my-0">Grand Total: $<span id="quoteGrandTotal"></span></h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <button type="submit" value="Submit" class="btn btn-primary btn-lg btn-block">Book My Reservation!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts
+{
+    <script>
+    $(function(){
+        
+        var $dateCheckOut = $('#Reservation_DateCheckOut');
+        var $dateCheckIn = $('#Reservation_DateCheckIn');
+        
+        $dateCheckIn
+            .datepicker({showButtonPanel: true})
+            .on('change', function(){
+                $dateCheckOut.datepicker( "option", "maxDate", getDate( this ) );
+                calculateReservation();
+            });
+
+        $dateCheckOut
+            .datepicker({showButtonPanel: true})
+            .on('change', function(){
+                $dateCheckIn.datepicker( "option", "minDate", getDate( this ) );
+                calculateReservation();
+            });
+        
+        function getDate( element ) {
+            var date;
+            try {
+                date = $.datepicker.parseDate( dateFormat, element.value );
+            } catch( error ) {
+                date = null;
+            }
+
+            return date;
+        }
+
+        function calculateReservation()
+        {
+            var dateCheckIn = $dateCheckIn.val();
+            var dateCheckout = $dateCheckOut.val();
+
+            var date1 = new Date(dateCheckIn);
+            var date2 = new Date(dateCheckout);
+            if(date1 != 'Invalid Date' && date2 != 'Invalid Date')
+            {
+                $('#quoteCheckInDate').text(date1.toDateString());
+                $('#quoteCheckOutDate').text(date2.toDateString());
+                var subTotal = subTotalCalc(date1, date2);
+                $('#quoteSubTotal').text(subTotal);
+                var addOns = addOnsCal(date1, date2);
+                $('#quoteAddOns').text(addOns);
+                var tax = taxCalc(date1, date2);
+                $('#quoteTax').text(tax);
+                var grandTotal = finCalc(date1, date2);
+                $('#quoteGrandTotal').text(grandTotal);
+            }
+
+        }
+
+        function getAddOnsPrice()
+        {
+            var addOnsPrices = 0.00;
+            $('.addOns:checked').each(function(index, element){
+                addOnsPrices += parseFloat($(element).data('price'));
+            });
+            return addOnsPrices;
+        }
+
+        function addOnsCal(startDate1, endDate1) {
+          var timeEst = endDate1.getTime() - startDate1.getTime();
+          var daysEst = timeEst/(1000*3600*24);
+          var addOnsTotal = daysEst * getAddOnsPrice();
+          return addOnsTotal.toFixed(2);
+        };
+
+        function subTotalCalc(startDate1, endDate1) {
+          var timeEst = endDate1.getTime() - startDate1.getTime();
+          var daysEst = timeEst/(1000*3600*24);
+          var subtotal = daysEst * (50.00 + getAddOnsPrice());
+          return subtotal.toFixed(2);
+        };
+
+        function taxCalc(startDate1, endDate1) {
+          var timeEst = endDate1.getTime() - startDate1.getTime();
+          var daysEst = timeEst/(1000*3600*24);
+          var subtotal = daysEst * (50.00 + getAddOnsPrice());
+          var tax = subtotal * 0.07;
+          return tax.toFixed(2);
+        };
+
+        function finCalc(startDate1, endDate1) {
+          var timeEst = endDate1.getTime() - startDate1.getTime();
+          var daysEst = timeEst/(1000*3600*24);
+          var subtotal = daysEst * (50.00 + getAddOnsPrice());
+          var tax = subtotal * 0.07;
+          var finTot = subtotal + tax;
+          return finTot.toFixed(2);
+        }
+
+        $('#calDateCheckIn').on('click', function(){
+            $dateCheckIn .datepicker('show')
+        });
+
+        $('#calDateCheckOut').on('click', function(){
+            $dateCheckOut.datepicker('show')
+        });
+
+        $('.addOns').on('click', function(){
+            calculateReservation();
+        });
+    });  
+    </script>  
+}
