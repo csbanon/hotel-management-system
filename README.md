@@ -1,1 +1,2 @@
-# hotel-management-system
+# Welcome to oléHotels!
+### Hotel Management System
