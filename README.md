@@ -20,3 +20,33 @@ This system handles the reservation of rooms and holds the customers’ informat
 - Kenneth Rosario Rodríguez
 - Noelle Midkiff
 - Matthew Reid
+
+## Build Instructions
+
+To run this web application, all you need is a computer running macOS or Windows (32-bit or 64-bit). The product is self-contained, so it runs in all these operating systems without any issues by following the build instructions below.
+
+### macOS
+
+1. Download the folder entitled *macOS* from the repository for this project. This can be
+found in `oléHotels > Executables`.
+2. Open the folder.
+3. Locate the executable file entitled `OleHotels` and double-click on it. This will open the
+terminal and will show the creation of a new local host.
+4. Copy or type the first link on the terminal to your web browser of choice. The link is:
+`http://localhost:5000`.
+5. The web app will open and will be ready for use.
+
+### Windows
+
+1. Download the folder entitled *Windows* from the repository for this project. This can
+be found in `oléHotels > Executables`. You must specify whether you want the 32-bit
+version or the 64-bit version. For most computers, the 64-bit version will suffice.
+2. Open the folder and double-click on the folder for the version of your choice (i.e., `32-Bit`
+or `64-Bit`).
+3. Locate the executable file entitled `OleHotels.exe` and double-click on it. This will open a
+command prompt and will show the creation of a new local host.
+4. Copy or type the first link on the command prompt to your web browser of choice. The
+link is: `http://localhost:5000`.
+5. The web app will open and will be ready for use.
+
+*Note: There have been some sporadic issues when running the web application with macOS Catalina, the newest version of macOS, due to the way it handles executables with its new contained file system and Gatekeeper. If this is the case, please use macOS Mojave or earlier, or use a Windows computer.*
