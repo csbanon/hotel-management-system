@@ -27,7 +27,7 @@ To run this web application, all you need is a computer running macOS or Windows
 
 ### macOS
 
-1. Download the folder entitled *macOS* from the repository for this project. This can be
+1. Download the folder entitled `macOS` from the repository for this project. This can be
 found in `oléHotels > Executables`.
 2. Open the folder.
 3. Locate the executable file entitled `OleHotels` and double-click on it. This will open the
@@ -38,7 +38,7 @@ terminal and will show the creation of a new local host.
 
 ### Windows
 
-1. Download the folder entitled *Windows* from the repository for this project. This can
+1. Download the folder entitled `Windows` from the repository for this project. This can
 be found in `oléHotels > Executables`. You must specify whether you want the 32-bit
 version or the 64-bit version. For most computers, the 64-bit version will suffice.
 2. Open the folder and double-click on the folder for the version of your choice (i.e., `32-Bit`
