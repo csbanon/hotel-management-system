@@ -4,7 +4,7 @@
 
 - **Year:** 2019
 - **Language(s):** C#, HTML, JavaScript, CSS
-- **Discipline(s):** Object-Oriented Software Development, Web Development
+- **Discipline(s):** Object-Oriented Software Development, Web Design, Web Development
 - **Keywords:** `dotnet`, `dotnet-core`, `hotel`, `hotel-management`, `hotel-management-system`, `itemized-lodging-receipts`, `reservations`, `room-cleaning`, `service-requests`, `web-application`, `worker-logs`, `.NET`
 
 ## Description
